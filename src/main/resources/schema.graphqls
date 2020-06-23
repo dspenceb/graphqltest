@@ -1,5 +1,3 @@
-
-
 type Query {
     books: [Book!]
 }
@@ -19,7 +17,7 @@ type Author {
 
 
 directive @allowed(
-    allowed: [String!]
+    allowed: [AllowedState!]
 ) on FIELD_DEFINITION | OBJECT
 
 enum AllowedState {
