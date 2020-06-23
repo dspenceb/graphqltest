@@ -1,0 +1,28 @@
+
+
+type Query {
+    books: [Book!]
+}
+
+type Book {
+    id: Int!
+    name: String! @allowed(
+        allowed: [ALLOWED]
+    )
+    author: Author!
+}
+
+type Author {
+    id: Int!
+    name: String!
+}
+
+
+directive @allowed(
+    allowed: [String!]
+) on FIELD_DEFINITION | OBJECT
+
+enum AllowedState {
+    ALLOWED
+    DISALLOWED
+}
